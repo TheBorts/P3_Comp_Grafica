@@ -114,7 +114,7 @@ int main(int argc, char** argv)
     // Initialize world
     world myWorld = world();
 
-    // Get models from command line arguments
+    // Get models from command line arguments   
     for (int i = 1; i < argc; i++) {
         myWorld.add_tree(argv[i]);
     }
@@ -175,6 +175,7 @@ int main(int argc, char** argv)
     long long frameCount = 0;
     
     std::string path = "../scenes/scene" + std::to_string(sceneIndex);
+    std::filesystem::create_directory("../scenes");
     std::filesystem::create_directory(path);
     std::string pseudoObjPath = path + "/frame";
     std::string mtlPath = "../scenes/scene" + std::to_string(sceneIndex) + "/scene.mtl";
